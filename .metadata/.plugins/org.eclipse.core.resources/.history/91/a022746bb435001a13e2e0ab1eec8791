@@ -1,0 +1,21 @@
+package com.cos.controller;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cos.service.MemberService;
+
+@Controller
+public class MemberController {
+	
+	@Inject
+	private MemberService mbService;
+	
+	@RequestMapping(value = "/memberJoin")
+	public String memberJoin(String userID, String userPW, String userNAME, String userEmail)  
+	
+	return "MemberJoin";
+	
+}

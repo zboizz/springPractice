@@ -1,0 +1,17 @@
+package com.bit.springNote.command;
+
+import java.util.ArrayList;
+
+import org.springframework.ui.Model;
+
+import com.bit.springNote.dao.NoteDao;
+
+public class NoteListCommand implements noteCommand {
+	@Override
+	public void execute(Model model) {
+		NoteDao dao = new NoteDao();
+		ArrayList<NoteDto> dtos = dao.list();
+		model.addAttribute("list",dtos);
+	}
+
+}

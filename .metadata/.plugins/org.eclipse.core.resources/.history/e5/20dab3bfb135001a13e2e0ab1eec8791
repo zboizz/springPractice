@@ -1,0 +1,12 @@
+package com.cos.domain;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class MemberVo {
+	private int num;
+	private String NAME;
+	private String address;
+}

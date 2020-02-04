@@ -1,0 +1,17 @@
+package com.bit.springBoard.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.bit.springBoard.command.BoardCommand;
+
+@Controller
+public class BoardController {
+	BoardCommand command;
+	
+	@RequestMapping(value="writeView")
+	public String writeView() {
+		return "writeView";
+		//views/writeView.jsp »£√‚
+	}
+}

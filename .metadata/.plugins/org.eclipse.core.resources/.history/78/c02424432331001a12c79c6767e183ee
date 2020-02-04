@@ -1,0 +1,17 @@
+<%@page import="com.bit.springNote.dto.NoteDto"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<jsp:useBean id="dao" class="com.bit.springNote.dao.NoteDao"/>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>list</h2>
+<%
+ArrayList<NoteDto> list = dao.list();
+%>
+</body>
+</html>

@@ -1,0 +1,22 @@
+package com.cos.controller;
+
+import javax.inject.Inject;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+@Controller
+public class MemberController {
+	
+	@Autowired
+	private SqlSession sqlSession;
+
+	
+	@RequestMapping(value = "/joinForm")
+	public String memberJoin(String userID, String userPW, String userNAME, String userEmail)  
+	I
+	return "redirect:join";
+	
+}

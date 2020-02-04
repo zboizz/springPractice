@@ -1,0 +1,30 @@
+package com.cos.controller;
+
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cos.persistence.MemberDAO;
+
+
+@Controller
+public class MemberController {
+	
+	@Autowired
+	private SqlSession sqlSession;
+
+	
+	@RequestMapping(value = "/joinForm")
+	public String memberJoin(String userID, String userPW, String userNAME, String userEmail) { 
+	MemberDAO dao = sqlSession.getMapper(MemberDAO.class);
+	dao.insertDao(userID, userPW, userNAME, userEmail);
+	return "redirect:join";
+	
+	}
+	@RequestMapping(value = "list")
+	public String list()
+	
+}

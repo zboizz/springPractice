@@ -1,0 +1,10 @@
+package com.cos.persistence;
+
+import java.util.ArrayList;
+
+import com.cos.domain.MemberVo;
+
+public interface MemberDAO {
+	public void insertDao(String userID, String userPW, String userNAME, String userEmail);
+	public ArrayList<MemberVo> listDao();
+}

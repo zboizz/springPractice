@@ -1,0 +1,46 @@
+package com.bit.springNote3.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
+
+import com.bit.springNote3.dto.NoteDto;
+
+public class NoteDao {
+
+	//servlet-context.xml
+	private JdbcTemplate template;
+	
+	public void setTemplate(JdbcTemplate template) {
+		this.template = template;
+	}
+	
+	//write
+	public void write(final String writer, final String content) {
+		//template.update(); 익명클래스가 들어가야함, preparedStatementCreater를 만들면 @Override생성됨
+		template.update(new PreparedStatementCreator() {
+			
+			@Override
+			public PreparedStatement createPreparedStatement(Connection con) 
+					throws SQLException {
+				String sql = "insert into tblNote(id, writer, content) "
+						   + "values (tblNoteSeq.nextval, ?, ?)";
+				PreparedStatement pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, writer);
+				pstmt.setString(2, content);
+				return pstmt;
+			}
+		});
+	}	
+	//list
+	public ArrayList<NoteDto> list(){
+		String sql ="select * from tblNote order by id desc";
+		return(ArrayList<NoteDto>)template.query(sql, new BeanPropertyRowMapper<NoteDto>(NoteDto.class));
+	}
+	//delete
+}

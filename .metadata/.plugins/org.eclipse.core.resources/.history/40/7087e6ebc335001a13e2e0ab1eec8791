@@ -1,0 +1,12 @@
+package com.cos.persistence;
+
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
+
+public class UserDAOImpl {
+
+		@Inject
+		private SqlSession session;
+		private static final String namespace = "com.cos.domain.user";
+}

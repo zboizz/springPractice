@@ -1,0 +1,9 @@
+package com.cos.persistence;
+
+
+
+public interface UserDAO {
+	public UserVO select(String userID) throws Exception;
+	public void insertDao(String userID, String userPW, String userName, String userEmail);	
+	
+}

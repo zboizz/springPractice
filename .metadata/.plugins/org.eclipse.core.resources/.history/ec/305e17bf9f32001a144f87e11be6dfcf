@@ -1,0 +1,10 @@
+package com.bit.springBoard.controller;
+
+import org.springframework.stereotype.Controller;
+
+import com.bit.springBoard.command.BoardCommand;
+
+@Controller
+public class BoardController {
+	BoardCommand command;
+}

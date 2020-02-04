@@ -1,0 +1,7 @@
+package com.cos.service;
+
+import com.cos.persistence.MemberDAO;
+
+public interface MemberService {
+	public void insert(MemberDAO)
+}

@@ -1,0 +1,5 @@
+package com.bit.springNote.command;
+
+public class NoteDeleteCommand {
+
+}

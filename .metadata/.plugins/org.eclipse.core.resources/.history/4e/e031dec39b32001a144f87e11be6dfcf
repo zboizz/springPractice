@@ -1,0 +1,41 @@
+package com.bit.springBoard.dao;
+
+import java.util.ArrayList;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+public class BoardDao {
+	
+	DataSource ds;
+	//server.xml datasource Rink를 해놓았기때문에 가능
+	
+	public BoardDao() {
+		try {
+			Context context = new InitialContext();
+			ds=(DataSource)context.lookup("java:comp/env/jdbc/Oracle11g");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	//insert
+	public void write(String bName, String bTitle, String bContent) {
+		
+	}	
+	
+	//list
+	public ArrayList<BoardDto> list(){
+		
+	}
+	
+	//contentView
+	
+	//modify
+	
+	//delete
+	
+	//upHit
+	
+	
+}

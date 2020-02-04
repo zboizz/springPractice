@@ -1,0 +1,5 @@
+package com.cos.controller;
+
+public class MemberController {
+
+}

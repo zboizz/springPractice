@@ -1,0 +1,10 @@
+package com.cos.service;
+
+import java.util.ArrayList;
+
+import com.cos.domain.MemberVO;
+
+public interface MemberService {
+	public void insertDao(String userID, String userPW, String userNAME, String userEmail);	
+	public ArrayList<MemberVO> listDao(); 
+}
