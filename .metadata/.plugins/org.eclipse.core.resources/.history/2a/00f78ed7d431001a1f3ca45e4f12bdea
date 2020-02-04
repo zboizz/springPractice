@@ -1,0 +1,10 @@
+package com.bit.springNote2.dao;
+
+public class IDao {
+	
+	public interface IDao {
+		public ArrayList<NoteDto> listDao();
+		public void writeDao(String writer, String content);
+		public void deleteDao(String id);
+	}
+}

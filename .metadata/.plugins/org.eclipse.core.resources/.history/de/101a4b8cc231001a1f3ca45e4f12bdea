@@ -1,0 +1,7 @@
+package com.bit.springNote2.dto;
+
+public class Note2Dto {
+	private int id;
+	private String writer;
+	private String content;
+}

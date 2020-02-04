@@ -1,0 +1,6 @@
+package com.bit.springBoard.command;
+
+public class BoardListCommand implements BoardCommand{
+	
+	@Override
+}

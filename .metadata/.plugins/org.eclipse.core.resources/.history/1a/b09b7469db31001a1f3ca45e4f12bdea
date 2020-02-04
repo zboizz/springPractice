@@ -1,0 +1,20 @@
+package com.bit.springNote2.controller;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class NoteController {
+
+	@Autowired //林涝, 狼档等 按眉 积己
+	private SqlSession sqlSession;
+	
+	@RequestMapping(value="noteForm")
+	public String noteForm() {
+		return "noteForm";
+	}
+	
+	@RequestMapping(value="write")
+}

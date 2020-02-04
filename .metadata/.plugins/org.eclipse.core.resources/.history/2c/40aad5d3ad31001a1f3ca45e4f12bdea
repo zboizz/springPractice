@@ -1,0 +1,7 @@
+package com.bit.springNote.command;
+
+public class NoteListCommand implements noteCommand {
+	@Override
+	public void execute(Model model)
+
+}

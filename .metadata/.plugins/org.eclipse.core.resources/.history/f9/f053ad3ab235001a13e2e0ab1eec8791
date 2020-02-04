@@ -1,0 +1,5 @@
+package com.cos.service;
+
+public interface MemberService {
+
+}

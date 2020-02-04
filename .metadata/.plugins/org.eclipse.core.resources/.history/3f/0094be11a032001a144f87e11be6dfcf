@@ -1,0 +1,29 @@
+package com.bit.springBoard.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.bit.springBoard.command.BoardCommand;
+import com.bit.springBoard.command.BoardWriteCommand;
+
+@Controller
+public class BoardController {
+	BoardCommand command;
+	
+	@RequestMapping(value="writeView")
+	public String writeView() {
+		return "writeView";
+		//views/writeView.jsp 호출
+	}
+	
+	@RequestMapping(value="write")
+	public String write(HttpServletRequest req, Model model) {
+		model.addAttribute("request", req);
+		command = new BoardWriteCommand();
+		command.execute(model);
+		return "redirect:list";//views/writeView.jsp 호출
+	}
+}

@@ -1,0 +1,7 @@
+package com.cos.service;
+
+import com.cos.domain.MemberVo;
+
+public interface MemberService {
+	public void insert(MemberVo member) throws Exception;
+}

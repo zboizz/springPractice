@@ -1,0 +1,6 @@
+package com.bit.springBoard.command;
+
+public interface BoardCommand {
+	public void execute(Model model);
+
+}

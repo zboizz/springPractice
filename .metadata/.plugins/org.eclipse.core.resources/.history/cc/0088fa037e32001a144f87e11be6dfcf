@@ -1,0 +1,9 @@
+package com.bit.springNote3.dao;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class NoteDao {
+
+	//servlet-context.xml
+	private JdbcTemplate template;
+}

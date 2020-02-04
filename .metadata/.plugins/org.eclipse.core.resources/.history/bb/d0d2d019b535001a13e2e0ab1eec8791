@@ -1,0 +1,6 @@
+package com.cos.persistence;
+
+
+public interface MemberDAO {
+	public void insertDao(String userID, String userPW, String userNAME, userEmail);
+}

@@ -1,0 +1,11 @@
+package com.bit.springNote.command;
+
+import org.springframework.ui.Model;
+
+public class NoteListCommand implements noteCommand {
+	@Override
+	public void execute(Model model) {
+		NoteDao dao = new NoteDao();
+	}
+
+}

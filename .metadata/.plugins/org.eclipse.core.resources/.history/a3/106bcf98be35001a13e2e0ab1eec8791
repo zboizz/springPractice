@@ -1,0 +1,56 @@
+package com.cos.controller;
+
+import java.security.Provider.Service;
+import java.util.Locale;
+
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.cos.persistence.UserDAO;
+import com.cos.service.CategoryService;
+import com.cos.service.UserService;
+
+@Controller
+public class UserController {
+
+	@Inject
+	private CategoryService ctService;
+	@Inject
+	private SqlSession sqlSession;
+	
+	@RequestMapping(value = "/userLoginForm", method = RequestMethod.GET)
+	public String userLoginForm(Model model) throws Exception{
+		model.addAttribute("ctg1", ctService.selectGubun1(1));
+		model.addAttribute("ctg2", ctService.selectGubun1(2));
+		model.addAttribute("ctg3", ctService.selectGubun1(3));
+		model.addAttribute("ctg4", ctService.selectGubun1(4));
+		return "user/userLoginForm";
+	}
+	
+	@RequestMapping(value = "/userJoinForm", method = RequestMethod.GET)
+	public String userJoinForm(Model model, Locale locale) throws Exception{
+		model.addAttribute("ctg1", ctService.selectGubun1(1));
+		model.addAttribute("ctg2", ctService.selectGubun1(2));
+		model.addAttribute("ctg3", ctService.selectGubun1(3));
+		model.addAttribute("ctg4", ctService.selectGubun1(4));
+		return "user/userJoinForm";
+	}
+	
+	@RequestMapping(value = "/userLogout", method = RequestMethod.GET)
+	public void userLogout() {
+	}
+	
+	@RequestMapping(value = "userJoin")
+	public String userJoin(String userID, String userPW, String userNAME, String userEmail) {
+		UserDAO Dao = sqlSession.getMapper(UserDAO.class);
+		Dao.insertDao(userID, userPW, userNAME, userEmail);
+		
+		return "user/userLoginForm";
+	}
+
+}
